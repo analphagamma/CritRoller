@@ -1,6 +1,6 @@
 == Welcome To CritRoller! ==
 
-This program will help you randomly roll Crits and Fumbles.
+This program will help you roll random Crits and Fumbles.
 
 = How To Use =
 
