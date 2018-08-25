@@ -195,13 +195,13 @@ class ResetWindow(QMainWindow):
         #Reset button
         reset_button_crit = QPushButton('Reset \'used\' Crits!')
         layout.addWidget(reset_button_crit)
-        self.reset_dialog = ResetConfirmWindowCrit(self)
-        reset_button_crit.pressed.connect(self.reset_action)
+        self.reset_crit_dialog = ResetConfirmWindowCrit(self)
+        reset_button_crit.pressed.connect(self.reset_crit_action)
         
         reset_button_fumble = QPushButton('Reset \'used\' Fumbles!')
         layout.addWidget(reset_button_fumble)
-        self.reset_dialog = ResetConfirmWindowFumble(self)
-        reset_button_fumble.pressed.connect(self.reset_action)
+        self.reset_fumble_dialog = ResetConfirmWindowFumble(self)
+        reset_button_fumble.pressed.connect(self.reset_fumble_action)
 
         cancel_button = QPushButton('Cancel')
         layout2.addWidget(cancel_button)
@@ -213,8 +213,11 @@ class ResetWindow(QMainWindow):
         
         self.setCentralWidget(widget)
 
-    def reset_action(self):
-        self.reset_dialog.show()
+    def reset_crit_action(self):
+        self.reset_crit_dialog.show()
+
+    def reset_fumble_action(self):
+        self.reset_fumble_dialog.show()
 
     def cancel_action(self):
         self.close()
