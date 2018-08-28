@@ -6,14 +6,14 @@ from random import randint
 class DBHandler(object):
 
     def __init__(self, database_path):
-        self.database_path = database_path
+        self.database_path = './databases/' + database_path
 
         self.w_types = {'magic': 1,
                    'bludgeoning': 2,
                    'piercing': 3,
                    'slashing': 4}
                    
-        self.conn = sqlite3.connect(database_path)
+        self.conn = sqlite3.connect(self.database_path)
         self.c = self.conn.cursor()
 
     def initialize_db(self):

@@ -165,7 +165,7 @@ class HelpWindow(QMainWindow):
 
         layout = QVBoxLayout()
 
-        with open('README.txt', 'r') as f: help_text = f.read()
+        with open('../README.txt', 'r') as f: help_text = f.read()
 
         layout.addWidget(QLabel(help_text))
 
@@ -399,7 +399,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(widget)
 
     def get_db_files(self):
-        return [f for f in os.listdir('.') if os.path.isfile(f) and f[-7:] == '.sqlite']
+        return [f for f in os.listdir('databases') if f[-7:] == '.sqlite']
 
     def create_database(self):
         self.create_dialog.show()
